@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 760" width="1920" height="760">
+	<title>hero-svg-svg</title>
+	<defs>
+		<linearGradient id="g1" x1="1757.3" y1="499.8" x2="249.4" y2="663.9" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#590d56"/>
+			<stop offset="1" stop-color="#8c1688"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+	</style>
+	<path id="Layer" class="s0" d="m1920 93.8v480.4c0 0-712 391-1111.3 38.5-399.4-352.5-811.4-211.1-811.4-211.1v-43.5c155.8-48.6 407.6-100.4 592-49 534 149.1 534.9-222.5 944-300.5 163.8-31.2 230 28.4 386.7 85.2z"/>
+</svg>

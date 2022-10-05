@@ -1,0 +1,871 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@300;400&display=swap')
+
+html
+	box-sizing: border-box
+*,*::after,*::before
+	box-sizing: inherit	
+body 
+	font-family: 'Roboto', sans-serif
+	font-size: 1rem
+	margin: 0
+	padding: 0	
+h1
+	font-size: 47px
+	line-height: 42px
+	margin: 1rem 0		
+	@media (min-width: 1024px)
+		font-size: 55px
+h2
+	font-size: 30px	
+img
+	max-width: 100%	
+.overflow
+	overflow: hidden 	
+.title	
+	font-family: 'Merriweather', serif
+.container 
+	width: 100% 
+	padding: 0 15px
+	@media (min-width: 1024px)
+		margin: auto
+		max-width: 1200px
+header
+	padding: 18px 0
+	@media (min-width: 640px)
+		padding: 36px 0
+	.wrap
+		display: flex
+		justify-content: space-between
+		align-items: center
+	.logo-link
+		img
+			max-width: 130px
+			width: 100%
+			@media (min-width: 640px)
+				max-width: 200px
+	.nav
+		display: flex
+		align-items: center
+		div
+			&:nth-child(2)
+				margin: 0 12px
+				@media (min-width: 640px)
+					margin: 0 40px
+		&-search
+			width: 24px
+			height: 26px
+			transition: transform 0.4s ease
+			svg
+				width: 100%
+				height: 100%
+			&.no-show
+				transform: scale(0)	
+				transition: transform 0.4s ease	
+			@media (min-width: 640px)
+				width: 48px
+				height: 48px
+		&-geo
+			width: 22px
+			height: 26px
+			transition: transform 0.4s ease
+			svg
+				width: 100%
+				height: 100%
+			&.no-show
+				transform: scale(0)
+				transition: transform 0.4s ease
+			@media (min-width: 640px) 
+				width: 48px 
+				height: 48px
+		&-menu.burger
+			width: 33px
+			height: 26px
+			background-image: url('../img/burger-off.png')
+			background-size: contain
+			background-position: center
+			background-repeat: no-repeat
+			transition: background-image 0.4s ease
+			@media (min-width: 640px) 
+				width: 66px 
+				height: 48px
+		&-menu.burger.toggle
+			width: 33px
+			height: 26px
+			background-image: url('../img/burger-on.png')
+			transition: background-image 0.4s ease
+			@media (min-width: 640px) 
+				width: 66px 
+				height: 48px
+		&-links
+			position: fixed 
+			right: 0 
+			top: 64px 
+			height: calc(100vh - 64px)
+			width: 100% 
+			overflow-x: hidden 
+			background-color: #fff
+			margin: 0 
+			z-index: 50
+			display: flex
+			align-items: center
+			opacity: 0
+			transition: opacity 0.4s ease
+			display: none
+			@media (min-width: 640px)
+				top: 120px
+				height: calc(100vh - 120px)
+			svg
+				position: absolute
+				width: 100%
+				&:nth-child(1)
+					top: 5%
+				&:nth-child(2)
+					top: 40%
+				&:nth-child(3)
+					top: 34%
+				&:nth-child(4)
+					top: 60%
+				&:nth-child(5)
+					top: 70%
+			ul
+				margin: 0
+				padding: 0
+			li
+				list-style: none
+				a
+					font-family: 'Merriweather', serif
+					font-size: 1rem
+					display: block
+					padding: 1rem 0
+					text-decoration: none
+					color: #000
+		&-links.active 
+			display: flex
+			opacity: 1
+			transition: opacity 0.4s ease
+
+main
+	margin-bottom: 2rem
+	.container
+		@media (min-width: 1024px)
+			margin: inherit
+	.for-grid		
+		@media (min-width: 1024px)
+			max-width: 1200px
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 8rem
+			display: grid
+			grid-template-rows: 70px 1fr 10px 80px 80px
+			grid-template-columns: 360px 1fr
+		@media (min-width: 1200px)
+			margin-bottom: 10rem
+	.title
+		max-width: 292px
+		@media (min-width: 640px)
+			max-width: 360px
+			line-height: 55px
+.main
+	position: relative
+	overflow: hidden
+	&-bg
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		z-index: -1		
+		height: 320px
+		@media (min-width: 480px) 
+			height: 400px
+		@media (min-width: 640px) 
+			height: auto
+		@media (min-width: 1024px) 
+			top: 25%
+		@media (min-width: 1200px) 
+			top: 15%
+		@media (min-width: 1440px) 
+			top: 0
+		svg
+			width: 120%	
+			height: 100%
+			animation: wave linear 4s infinite
+			@keyframes wave
+				0%
+					transform: translateX(-3%)
+				25%
+					transform: translateX(-2%)		
+				50%
+					transform: translateX(0%)		
+				75%
+					transform: translateX(-2%)		
+				100%
+					transform: translateX(-3%)
+	&-imgs
+		display: flex
+		justify-content: center
+		position: relative
+		@media (min-width: 1024px)
+			grid-column-start: 2
+			grid-column-end: 3
+			grid-row-start: 2
+			grid-row-end: 3
+		img.main-venarus-img
+			max-width: 300px
+			height: auto
+			margin-left: -70px
+			z-index: 3
+			@media (min-width: 768px)
+				max-width: inherit
+		img.main-venarus-img-1
+			display: none
+			@media (min-width: 1024px)
+				display: block
+				position: absolute
+				top: -80px
+				left: 0
+				z-index: 2
+		img.main-venarus-img-2
+			display: none
+			@media (min-width: 1024px)
+				display: block
+				position: absolute
+				top: -80px
+				right: 1%
+				z-index: 1
+	&-nav	
+		display: flex
+		align-items: center
+		justify-content: center	
+		padding: 1rem 0
+		@media (min-width: 1024px)
+			grid-row-start: 4
+			grid-row-end: 5
+			grid-column-start: 2
+			grid-column-end: 3
+		svg
+			margin: 0 0.4rem
+			cursor: pointer
+			@media (min-width: 768px)
+				width: 70px
+				height: 70px
+				margin: 0 1rem
+			@media (min-width: 1024px)
+				filter: brightness(0) invert(1)
+	&-link
+		display: flex
+		align-items: center
+		justify-content: center
+		@media (min-width: 1024px)
+			grid-row-start: 5 
+			grid-row-end: 6
+			grid-column-start: 2 
+			grid-column-end: 3
+		a
+			border-radius: 33px
+			border: 1px solid #5B0E58
+			text-decoration: none
+			color: #5B0E58
+			opacity: .7
+			padding: 0.5rem 1rem
+			@media (min-width: 768px)
+				padding: 1rem 2rem
+			@media (min-width: 1024px)
+				border: 1px solid #ffffff 
+				color: #ffffff
+				padding: 1.5rem 5rem
+				transition: opacity 0.4s
+				&:hover
+					opacity: 1
+					transition: opacity 0.4s
+	&-scheme
+		padding: 2rem 0	
+		display: flex
+		flex-direction: column
+		align-items: center
+		@media (min-width: 1024px)
+			grid-row-start: 3
+			grid-row-end: 6
+			grid-column-start: 1 
+			grid-column-end: 2
+		.item
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-bottom: 1rem
+			max-width: 200px
+			min-width: 200px
+			a
+				position: absolute
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+			span
+				text-decoration: underline	
+				color:#590D56
+section //marquee
+	@keyframes scroll 
+		0% 
+			transform: translate(0, 0)
+		100%
+			transform: translate(-100%, 0)
+	.marquee 
+		display: block
+		width: 100%
+		white-space: nowrap
+		overflow: hidden
+		border-top: 1px solid #47093E 
+		border-bottom: 1px solid #47093E 
+		padding: 0.5rem 0
+	.marquee span 
+		color: #590D56
+		text-transform: uppercase
+		font-family: 'Roboto', serif
+		display: inline-block
+		font-size: 24px
+		padding-left: 100%
+		animation: scroll 60s infinite linear
+		@media (min-width: 1024px)
+			font-size: 3rem
+section.benefits
+	padding: 2rem 0	
+	.wrap
+		display: grid
+		@media (min-width: 640px)
+			place-content: center
+		@media (min-width: 991px)
+			grid-template-columns: repeat(3, 1fr)
+		.item
+			display: flex
+			align-items: center
+			padding: 1rem
+			svg
+				max-width: 70px
+				width: 100%
+				margin-right: 1rem
+// section complex
+section.complex
+	margin-bottom: 2rem
+	.wrap 
+		@media (min-width: 1024px) 
+			display: flex
+	.complex
+		&-title
+			@media (min-width: 1024px)
+				max-width: 260px
+			h2
+				font-size: 1.5rem
+			.subtitle
+				color: #777777	
+				line-height: 24px
+		&-wrap
+			width: 100%
+			.item
+				border-top: 1px solid #47093E
+				padding: 0.5rem 0
+				position: relative
+				&:nth-last-child(1)
+					border-bottom: 1px solid #47093E
+				@media (min-width: 1024px) 
+					min-height: 190px
+					display: flex
+					justify-content: center
+					align-items: center
+				h3
+					font-weight: 300	
+					@media (min-width: 1024px)
+						font-size: 30px
+						max-width: 360px
+						margin: auto
+						line-height: 1
+				.link
+					color: #590D56
+					text-decoration: underline
+					@media (min-width: 1024px)
+						position: absolute
+						left: 0
+						bottom: 2rem
+				.bubble
+					position: absolute
+					width: 40px
+					height: 40px
+					background-color: #590D56
+					right: 5px
+					bottom: 5px
+					border-radius: 50%
+					overflow: hidden
+					@media (min-width: 640px) 
+						width: 60px
+						height: 60px
+					@media (min-width: 1024px) 
+						width: 130px
+						height: 130px
+					&.star
+						background-image: url('../img/star.svg')
+						background-repeat: no-repeat
+						background-size: 90%
+						background-position: center
+						@media (min-width: 1120px)
+							left: 95px
+							top: 15px
+					&.lines
+						background-image: url('../img/Vector17.svg'), url('../img/Vector18.svg')
+						background-repeat: no-repeat 
+						background-size: 90% 
+						background-position: center center, 60% 90%
+						@media (min-width: 1120px) 
+							top: 50%
+							transform: translateY(-50%)
+					&.rounds
+						@media (min-width: 1120px)
+							left: 4rem
+							top: -2rem
+						&::after
+							content: ''
+							position: absolute
+							left: 50%
+							top: 50%
+							transform: translate(-50%, -50%)
+							border: 1px solid rgba(255,255,255, 0.5)
+							border-radius: 50%
+							width: 50%
+							height: 50%
+						&::before
+							content: ''
+							position: absolute
+							left: 50%
+							top: 50%
+							transform: translate(-50%, -50%)
+							border: 1px solid rgba(255,255,255, 0.5)
+							border-radius: 50%
+							width: 10%
+							height: 10%
+					&.basketball
+						@media (min-width: 1120px)
+							right: 3rem
+							bottom: -1rem
+							z-index: 1
+						&::after
+							content: ''
+							position: absolute
+							left: 60%
+							top: 0
+							border: 1px solid rgba(255,255,255, 0.5)
+							border-radius: 50%
+							width: 100%
+							height: 100%
+						&::before
+							content: ''
+							position: absolute
+							left: -60%
+							top: 0
+							border: 1px solid rgba(255,255,255, 0.5)
+							border-radius: 50%
+							width: 100%
+							height: 100%
+					&.arrows
+						@media (min-width: 1120px)
+							left: 100px
+						&::after
+							content: ''
+							position: absolute
+							background-image: url('../img/arr-png-try.png')
+							background-repeat: no-repeat
+							background-position: 100% 50%
+							background-size: contain
+							width: 100%
+							height: 100%
+section.about
+	position: relative
+	margin: 3rem 0
+	@media (min-width: 768px)
+		margin: 6rem 0
+	.about-bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 100%
+		height: 370px
+		z-index: -1
+		@media (min-width: 480px)
+			height: 480px
+		@media (min-width: 640px)
+			height: 520px
+		@media (min-width: 768px)
+			height: 600px
+		@media (min-width: 1024px)
+			height: 720px
+			top: -60px
+		@media (min-width: 1200px)
+			top: -100px
+			height: fit-content
+		@media (min-width: 1440px)
+			top: -200px
+		svg
+			width: 100%
+			height: 100%
+	.container
+		.wrap
+			@media (min-width: 768px)
+				display: grid 
+				grid-template-columns: 260px 1fr
+		.title		
+			font-size: 1.5rem	
+		.slider	
+			display: flex
+			align-items: center
+			min-width: 0
+			&-img
+				position: relative
+				z-index: 0
+				a.fancy-link
+					position: relative
+					display: block
+					height: 100%
+					svg
+						position: absolute
+						left: 50%
+						top: 50%
+						transform: translate(-50%, -50%)
+			img
+				width: 100%
+				position: relative 
+			.slider-img.swiper-slide-prev
+				width: 260px
+				height: auto
+				display: grid
+				place-content: center
+				align-items: center
+			&-nav
+				display: flex
+				flex-direction: column
+				padding-left: 2rem
+				.slider-next
+					width: 50px
+					cursor: pointer
+					svg
+						max-width: 100%
+						transform: rotate(180deg)
+				.slider-prev
+					width: 50px
+					cursor: pointer
+					svg
+						max-width: 100%
+	.about-more
+		text-align: right
+		padding: 1rem 0
+		@media (min-width: 768px)
+			grid-column-start: 1
+			grid-column-end: 3
+		&-link
+			border-radius: 33px
+			border: 1px solid #fff
+			text-decoration: none
+			color: #fff
+			padding: 0.5rem 1rem
+			font-size: 0.8rem
+			@media (min-width: 768px)
+				padding: 1rem 2rem
+section.opinion
+	padding: 2rem 0
+	@media (min-width: 768px)
+		margin: 6rem 0
+	.opinion-title
+		h2 
+			font-size: 1.5rem 
+		.subtitle 
+			color: #777777 
+			line-height: 24px
+	.wrap 
+		@media (min-width: 768px) 
+			display: grid
+			grid-template-columns: 260px 1fr
+		.opinion-slider-wrap
+			min-width: 0
+			.opinion-slide
+				img
+					width: 100%
+		.opinion-pagination
+			padding: 1rem 0
+			.swiper-pagination-bullet
+				background: #590D56
+				width: 16px
+				height: 16px
+section.useful
+	position: relative
+	margin: 3rem 0
+	@media (min-width: 768px)
+		margin: 6rem 0
+	@media (min-width: 1024px)
+		margin-top: 8rem
+		margin-bottom: 6rem
+	@media (min-width: 120px)
+		margin-bottom: 4rem
+	.main-link
+		@media (min-width: 768px) 
+			justify-content: flex-end
+			a
+				padding: 1rem 2rem	
+				@media (min-width: 1024px)
+					border: 1px solid #5b0e58
+					color: #5b0e58
+	.useful-bg
+		position: absolute 
+		top: 0 
+		left: 0 
+		right: 0 
+		bottom: 0 
+		width: 100% 
+		height: 280px 
+		z-index: -1
+		@media (min-width: 480px) 
+			height: 380px
+			top: -50px
+		@media (min-width: 640px) 
+			top: -70px
+			height: 480px
+		@media (min-width: 768px) 
+			height: 620px
+			top: -120px
+		@media (min-width: 991px) 
+			height: 720px
+			top: -190px
+		@media (min-width: 1200px) 
+			top: -230px 
+			height: fit-content
+		svg
+			width: 100% 
+			height: 100%
+	.useful-title
+		padding-right: 1rem
+		@media (min-width: 1024px)
+			max-width: 280px
+		h2 
+			font-size: 1.5rem 
+		.subtitle 
+			color: #ffffff 
+			line-height: 24px
+	.useful-wrap
+		margin-bottom: 2rem	
+		@media (min-width: 768px) 
+			display: grid 
+			grid-template-columns: 260px 1fr
+		@media (min-width: 1440px)
+			margin-bottom: 10rem
+		@media (min-width: 1600px)
+			margin-bottom: 14rem
+	.useful-items
+		display: grid
+		grid-gap: 30px
+		@media (min-width: 640px)
+			grid-template-rows: 1fr 1fr
+			grid-template-columns: 1fr 1fr 1fr
+			grid-gap: 15px
+		.item-fullcol
+			@media (min-width: 640px)
+				grid-row-start: 1
+				grid-column-start: 1
+				grid-row-end: 3
+				grid-column-end: 2
+		.item-col
+			@media (min-width: 640px)
+				grid-row-start: 1
+				grid-column-start: 2
+				grid-row-end: 2
+				grid-column-end: 3
+		.item-col-2
+			@media (min-width: 640px)
+				grid-row-start: 1
+				grid-column-start: 3
+				grid-row-end: 2
+				grid-column-end: 4
+		.item-row
+			@media (min-width: 640px)
+				grid-row-start: 2
+				grid-column-start: 2
+				grid-row-end: 3
+				grid-column-end: 4
+		.item
+			position: relative
+			min-height: 165px
+			padding: 1rem
+			background-color: #47093E
+			.gradient
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				width: 100%
+				height: 100%
+				background: linear-gradient(rgba(71, 9, 62, 1), rgba(71, 9, 62, 0))
+				z-index: 2
+			.useful-item-title
+				font-size: 1rem
+				color: #ffffff
+				word-wrap: break-word
+				font-weight: 300
+				position: relative
+				z-index: 3
+				margin: 0
+				@media (min-width: 1024px) 
+					font-size: 1rem
+			img
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0
+				width: 100%
+				height: 100%
+				object-fit: cover
+				z-index: 1
+section.where
+	@media (min-width: 768px)
+		padding-top: 3rem
+	@media (min-width: 1024px)
+		padding-top: 4rem
+	@media (min-width: 1440px)
+		padding-top: 8rem
+	.where
+		&-wrap
+			@media (min-width: 768px)
+				display: grid 
+				grid-template-columns: 260px 1fr
+		&-item-1
+			h2 
+				font-size: 1.5rem 
+			.subtitle 
+				color: #777777 
+				line-height: 24px
+		&-imgs
+			position: relative
+			min-height: 270px
+			margin-bottom: 2rem
+			@media (min-width: 480px)
+				min-height: 440px
+			.where-img-1
+				position: absolute
+				bottom: 0
+				left: 0	
+				z-index: 2
+				@media (min-width: 480px)
+					left: 50% 
+					transform: translateX(-50%)
+			.where-img-2
+				position: absolute
+				top: 0
+				left: 0
+				width: 70%	
+				z-index: 1
+				@media (min-width: 480px)
+					width: inherit
+					left: 50%
+					transform: translateX(-50%)
+		&-btns
+			@media (min-width: 768px)
+				display: flex
+				justify-content: space-between
+				align-items: center
+			.where-link
+				border-radius: 33px
+				border: 1px solid #5B0E58
+				text-decoration: none
+				color: #5B0E58
+				padding: 1rem
+				margin-bottom: 1rem	
+				transition: all 0.4s
+				text-align: center
+				&:hover
+					background-color: #590D56
+					border: transparent
+					transition: all 0.4s
+					a
+						color: #fff
+				@media (min-width: 768px)
+					border: 1px solid #5b0e58
+					border-radius: 33px
+				a
+					text-decoration: none
+					@media (min-width: 768px)
+						color: #5b0e58
+						padding: 1rem 2rem
+					@media (min-width: 1024px)
+						padding: 1rem 4rem
+
+		&-gradient
+			height: 60px
+			background: linear-gradient(#ffffff, #47093E 250%)
+footer.footer
+	.footer
+		&-title
+			font-size: 1rem
+			text-transform: uppercase	
+			color: #540C50
+			text-align: center
+			margin-bottom: 1rem
+			@media (min-width: 1024px)
+				font-size: 2rem
+				margin: 2rem 0
+		&-wrap
+			display: grid
+			@media (min-width: 1024px)
+				grid-template-columns: repeat(3, 1fr)
+		&-item
+			margin-bottom: 1rem
+			text-align: center
+			padding: 0 1rem
+			@media (min-width: 1024px)
+				text-align: inherit
+			&:nth-child(2)
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				span
+					&:nth-last-child(1)
+						font-size: 14px	
+			span
+				font-size: 12px
+				color: #7A7A7A
+				display: block
+			.social-links
+				display: flex
+				justify-content: center
+				align-items: center
+				margin-bottom: 1rem
+				@media (min-width: 1024px)
+					justify-content: initial
+				a
+					text-decoration: none
+					margin-right: 2rem
+			.copyright
+				display: flex
+				align-items: center	
+				justify-content: center	
+				.footer-logo
+					margin-right: 1rem	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+					
+						
+
+				
+
+
+
+
